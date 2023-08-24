@@ -74,3 +74,7 @@ async function drawWinner(amount, list){
 
     return winners;
 }
+
+module.exports = {
+    endGiveaway
+}
