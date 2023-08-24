@@ -28,7 +28,7 @@ module.exports = {
                     return interaction.reply({embeds: [endedGiveaway], ephemeral: true});
                 }
 
-                // Ending here.. TODO
+                endGiveaway(res[0].id)
                 
 
             } else {

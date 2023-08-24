@@ -1,6 +1,7 @@
 const { EmbedBuilder, ApplicationCommandType, PermissionsBitField, ButtonBuilder, ButtonStyle, ActionRowBuilder, Embed } = require('discord.js');
 const moment = require('moment');
-const con = require('../../functions/db')
+const con = require('../../functions/db');
+const { endGiveaway } = require('../../functions/checkEndedGiveaways');
 
 module.exports = {
     name: 'end',
@@ -35,7 +36,7 @@ module.exports = {
                     return interaction.reply({embeds: [endedGiveaway], ephemeral: true});
                 }
 
-                // Ending here.. TODO
+                endGiveaway(res[0].id)
                 
 
             } else {
