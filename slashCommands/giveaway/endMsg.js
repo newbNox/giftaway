@@ -14,8 +14,9 @@ module.exports = {
         } = interaction; 
         const { guild } = member;
 
-        // Way of getting giveawayId from, most likely interaction.message.id ?
-        con.query(`SELECT * FROM giveaways WHERE id='${giveawayId}' AND guild='${guildId}'`, function (err, res){
+        const messageId = interaction.targetId;
+
+        con.query(`SELECT * FROM giveaways WHERE message='${messageId}' AND guild='${guildId}'`, function (err, res){
             if(res.length > 0){
 
                 if(res[0].ended){
